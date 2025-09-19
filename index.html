@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTORE - Xây Dựng Sức Bền Tâm Lý Từ Bên Trong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --section-padding: 80px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero Section */
+        .hero-section {
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .typing-animation {
+            animation: typewriter 3s steps(40, end) 0.5s both;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid var(--white);
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.85;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-gradient);
+            color: var(--white);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-out 1.2s both, float 3s ease-in-out infinite 2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Background Animation */
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: floatUpDown 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--section-padding);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* Opening Questions Section */
+        .opening-questions {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .question-card {
+            background: var(--white);
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .question-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        .question-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .answer-reveal {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        /* Philosophy Quote Section */
+        .philosophy-section {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            position: relative;
+        }
+
+        .quote-text::before,
+        .quote-text::after {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            position: absolute;
+            font-family: serif;
+        }
+
+        .quote-text::before {
+            top: -20px;
+            left: -40px;
+        }
+
+        .quote-text::after {
+            bottom: -40px;
+            right: -40px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--bg-light);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .problem-card:nth-child(2) { animation-delay: 0.2s; }
+        .problem-card:nth-child(3) { animation-delay: 0.4s; }
+
+        .problem-icon {
+            font-size: 3rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .problem-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .problem-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Core Philosophy Section */
+        .core-philosophy {
+            background: var(--white);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .philosophy-card {
+            background: var(--white);
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .philosophy-icon {
+            font-size: 2.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .philosophy-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* RESTORE Framework Section */
+        .restore-framework {
+            background: var(--bg-light);
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .framework-card {
+            position: relative;
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .framework-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--primary-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .framework-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .framework-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .framework-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .framework-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 20px auto;
+        }
+
+        .framework-letter {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .framework-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .framework-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .framework-days {
+            background: var(--accent-gradient);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* Daily Structure Section */
+        .daily-structure {
+            background: var(--white);
+        }
+
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .structure-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .structure-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .structure-icon {
+            font-size: 2rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .structure-time {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .structure-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        /* Differentiators Section */
+        .differentiators-section {
+            background: var(--bg-light);
+        }
+
+        .differentiators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .differentiator-card {
+            background: var(--white);
+            padding: 35px 30px;
+            border-radius: 15px;
+            border-left: 4px solid transparent;
+            border-image: var(--accent-gradient) 1;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .differentiator-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.15);
+        }
+
+        .diff-icon {
+            font-size: 2rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .diff-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .diff-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-category {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .benefit-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-item {
+            padding: 10px 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* What We Don't Teach Section */
+        .dont-teach-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+
+        .dont-teach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .dont-teach-left {
+            text-align: left;
+        }
+
+        .dont-teach-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #dc3545;
+            margin-bottom: 30px;
+        }
+
+        .dont-teach-list {
+            list-style: none;
+        }
+
+        .dont-teach-item {
+            padding: 12px 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 35px;
+            font-size: 1.1rem;
+        }
+
+        .dont-teach-item::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .do-teach-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 30px;
+        }
+
+        .do-teach-list {
+            list-style: none;
+        }
+
+        .do-teach-item {
+            padding: 12px 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 35px;
+            font-size: 1.1rem;
+        }
+
+        .do-teach-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 30px;
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .faq-answer.active {
+            padding: 0 30px 25px 30px;
+            max-height: 200px;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: var(--dark-gradient);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button-large {
+            display: inline-block;
+            background: var(--secondary-gradient);
+            color: var(--white);
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .cta-button-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .framework-grid,
+            .benefits-grid,
+            .problem-grid,
+            .structure-grid,
+            .philosophy-grid,
+            .differentiators-grid,
+            .questions-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .dont-teach-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .quote-text::before,
+            .quote-text::after {
+                display: none;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-animation">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">8 Ngày Thay Đổi Cuộc Đời</div>
+                <h1 class="hero-title">
+                    <span class="typing-animation">HÀNH TRÌNH RESTORE</span>
+                </h1>
+                <p class="hero-subtitle">Xây Dựng Sức Bền Tâm Lý Từ Bên Trong</p>
+                <p class="hero-description">
+                    Khám phá và kích hoạt nguồn sức mạnh tiềm ẩn trong bạn. Biến mọi thử thách thành cơ hội phát triển với framework RESTORE dựa trên khoa học thần kinh.
+                </p>
+                <a href="https://forms.gle/1GMGau3ayLfcHS5f7" target="_blank" class="cta-button">
+                    <i class="fas fa-rocket"></i> Bắt Đầu Hành Trình
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Questions Section -->
+    <section class="section opening-questions fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Bạn Có Từng Tự Hỏi...</h2>
+            <p class="section-subtitle">
+                Những câu hỏi mà mọi người đều từng trăn trở khi đối mặt với khó khăn
+            </p>
+            
+            <div class="questions-grid">
+                <div class="question-card">
+                    <span class="question-emoji">🤔</span>
+                    <p class="question-text">
+                        Tại sao một số người có thể vượt qua khó khăn và trở nên mạnh mẽ hơn?
+                    </p>
+                </div>
+                
+                <div class="question-card">
+                    <span class="question-emoji">💪</span>
+                    <p class="question-text">
+                        Làm thế nào để biến thử thách thành cơ hội phát triển bản thân?
+                    </p>
+                </div>
+                
+                <div class="question-card">
+                    <span class="question-emoji">🌟</span>
+                    <p class="question-text">
+                        Có phải sức mạnh thật sự đến từ khả năng "chịu đựng" hay từ khả năng "chuyển hóa"?
+                    </p>
+                </div>
+                
+                <div class="question-card">
+                    <span class="question-emoji">🔄</span>
+                    <p class="question-text">
+                        Làm sao để không chỉ vượt qua nghịch cảnh mà còn tìm thấy ý nghĩa từ chúng?
+                    </p>
+                </div>
+                
+                <div class="question-card">
+                    <span class="question-emoji">🚀</span>
+                    <p class="question-text">
+                        Bí quyết để biến những "cú sốc" của cuộc sống thành bệ phóng cho sự tăng trưởng?
+                    </p>
+                </div>
+            </div>
+            
+            <div class="answer-reveal">
+                <p>Câu trả lời nằm ở <strong>SỨC BỀN TÂM LÝ (Resilience)</strong> - khả năng đặc biệt mà mỗi người đều có thể phát triển.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTORE Framework Section -->
+    <section class="section restore-framework fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Framework R.E.S.T.O.R.E</h2>
+            <p class="section-subtitle">
+                Phương pháp khoa học 7 bước giúp bạn xây dựng sức bền tâm lý từ bên trong
+            </p>
+            
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <div class="framework-content">
+                        <div class="framework-number">1</div>
+                        <div class="framework-letter">R</div>
+                        <h3 class="framework-title">RECOGNIZE</h3>
+                        <p class="framework-description">
+                            Nhận diện tín hiệu căng thẳng của cơ thể và học cách lắng nghe bản thân một cách nhạy bén.
+                        </p>
+                        <span class="framework-days">Ngày 1</span>
+                    </div>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-content">
+                        <div class="framework-number">2</div>
+                        <div class="framework-letter">E</div>
+                        <h3 class="framework-title">EASE</h3>
+                        <p class="framework-description">
+                            Điều hòa hệ thần kinh qua các kỹ thuật thở và thực hành cơ thể đơn giản nhưng hiệu quả.
+                        </p>
+                        <span class="framework-days">Ngày 2</span>
+                    </div>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-content">
+                        <div class="framework-number">3</div>
+                        <div class="framework-letter">S</div>
+                        <h3 class="framework-title">SUPPORT</h3>
+                        <p class="framework-description">
+                            Xây dựng nền tảng tự thương yêu bản thân và trở thành người bạn đồng hành tốt nhất cho chính mình.
+                        </p>
+                        <span class="framework-days">Ngày 3</span>
+                    </div>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-content">
+                        <div class="framework-number">4</div>
+                        <div class="framework-letter">T</div>
+                        <h3 class="framework-title">TRANSFORM</h3>
+                        <p class="framework-description">
+                            Phát triển khả năng linh hoạt cảm xúc - học cách làm bạn với mọi cảm xúc và chuyển hóa chúng.
+                        </p>
+                        <span class="framework-days">Ngày 4</span>
+                    </div>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-content">
+                        <div class="framework-number">5</div>
+                        <div class="framework-letter">O</div>
+                        <h3 class="framework-title">OPTIMIZE</h3>
+                        <p class="framework-description">
+                            Thiết lập hệ thống "reset" căng thẳng hiệu quả và tối ưu hóa năng lượng hàng ngày.
+                        </p>
+                        <span class="framework-days">Ngày 5</span>
+                    </div>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-content">
+                        <div class="framework-number">6</div>
+                        <div class="framework-letter">R</div>
+                        <h3 class="framework-title">REFRAME</h3>
+                        <p class="framework-description">
+                            Tái định khung câu chuyện của bạn - viết lại trải nghiệm với góc nhìn ý nghĩa và tích cực.
+                        </p>
+                        <span class="framework-days">Ngày 6</span>
+                    </div>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-content">
+                        <div class="framework-number">7</div>
+                        <div class="framework-letter">E</div>
+                        <h3 class="framework-title">EVOLVE</h3>
+                        <p class="framework-description">
+                            Phát triển và tích hợp thực hành lâu dài - xây dựng lối sống bền vững với sức mạnh nội tại.
+                        </p>
+                        <span class="framework-days">Ngày 7-8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Philosophy Section -->
+    <section class="section core-philosophy fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Triết Lý Cốt Lõi RESTORE</h2>
+            <p class="section-subtitle">
+                Khám phá và kích hoạt nguồn sức mạnh tiềm ẩn - biến thử thách thành thầy giáo dạy về sức mạnh nội tại
+            </p>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🔄</div>
+                    <h3 class="philosophy-title">Chuyển Hóa Thay Vì Chịu Đựng</h3>
+                    <p class="philosophy-desc">
+                        Không dạy bạn "mạnh mẽ giả tạo" hay chấp nhận thụ động. Thay vào đó, giúp bạn biến thử thách thành động lực phát triển.
+                    </p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">💎</div>
+                    <h3 class="philosophy-title">Phát Triển Trí Tuệ Cảm Xúc</h3>
+                    <p class="philosophy-desc">
+                        Xây dựng nền tảng kiên cường từ giá trị cốt lõi của bạn. Tìm thấy ý nghĩa sâu sắc trong hành trình sống.
+                    </p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🌱</div>
+                    <h3 class="philosophy-title">Tái Lập Trình Bản Thân</h3>
+                    <p class="philosophy-desc">
+                        Dựa trên khoa học não bộ để "tái lập trình" tâm lý. Phát triển sức bền từ hiểu biết khoa học, không phải ép buộc.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Structure Section -->
+    <section class="section daily-structure fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Cấu Trúc Học Tập Hàng Ngày</h2>
+            <p class="section-subtitle">
+                Mỗi ngày chỉ 15-20 phút với nội dung được thiết kế khoa học và dễ áp dụng
+            </p>
+            
+            <div class="structure-grid">
+                <div class="structure-card">
+                    <div class="structure-icon">🧠</div>
+                    <span class="structure-time">3-5 phút</span>
+                    <h3 class="structure-title">Kiến Thức Tinh Gọn</h3>
+                    <p class="structure-description">Khoa học đằng sau căng thẳng và khả năng phục hồi của não bộ</p>
+                </div>
+                
+                <div class="structure-card">
+                    <div class="structure-icon">✍️</div>
+                    <span class="structure-time">5-7 phút</span>
+                    <h3 class="structure-title">Bài Tập Thực Hành</h3>
+                    <p class="structure-description">Kỹ thuật đơn giản, dễ áp dụng ngay trong cuộc sống hàng ngày</p>
+                </div>
+                
+                <div class="structure-card">
+                    <div class="structure-icon">🎧</div>
+                    <span class="structure-time">3-5 phút</span>
+                    <h3 class="structure-title">Audio Dẫn Thiền</h3>
+                    <p class="structure-description">Thiền định và thực hành có hướng dẫn để thư giãn sâu</p>
+                </div>
+                
+                <div class="structure-card">
+                    <div class="structure-icon">💡</div>
+                    <span class="structure-time">2-3 phút</span>
+                    <h3 class="structure-title">Ý Định Hàng Ngày</h3>
+                    <p class="structure-description">Tiêu điểm rõ ràng để duy trì động lực và định hướng</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiators Section -->
+    <section class="section differentiators-section fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Điểm Khác Biệt Độc Đáo</h2>
+            <p class="section-subtitle">
+                Tại sao RESTORE khác biệt với các phương pháp "tích cực hóa" thông thường
+            </p>
+            
+            <div class="differentiators-grid">
+                <div class="differentiator-card">
+                    <div class="diff-icon">🧠</div>
+                    <h3 class="diff-title">Dựa Trên Khoa Học Thần Kinh</h3>
+                    <p class="diff-desc">
+                        Căn cứ trên nghiên cứu mới nhất về căng thẳng, kiệt sức và khả năng phục hồi từ góc độ khoa học não bộ
+                    </p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="diff-icon">🌱</div>
+                    <h3 class="diff-title">Tiến Triển Nhẹ Nhàng</h3>
+                    <p class="diff-desc">
+                        Không cần thay đổi lối sống quá mức, chỉ củng cố dần hệ thần kinh theo "Quy tắc 2" bền vững
+                    </p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="diff-icon">🤝</div>
+                    <h3 class="diff-title">Tích Hợp Cơ Thể-Tâm Trí</h3>
+                    <p class="diff-desc">
+                        Nhấn mạnh thực hành cơ thể tạo ra thay đổi tinh thần - không tách rời mà hòa hợp
+                    </p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="diff-icon">📏</div>
+                    <h3 class="diff-title">Tập Trung Bền Vững</h3>
+                    <p class="diff-desc">
+                        Xây dựng theo nguyên lý "chỉ những thay đổi bền vững mới tồn tại" - không ép buộc tạm thời
+                    </p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="diff-icon">💖</div>
+                    <h3 class="diff-title">Lấy Tự Trắc Ẩn Làm Trung Tâm</h3>
+                    <p class="diff-desc">
+                        Mọi thực hành đều bao gồm yếu tố tử tế với bản thân - không tự trách mà tự thương
+                    </p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="diff-icon">🌍</div>
+                    <h3 class="diff-title">Áp Dụng Thực Tế</h3>
+                    <p class="diff-desc">
+                        Thiết kế đặc biệt cho người lao động bận rộn với thời gian hạn chế - thực tế và khả thi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section benefits-section fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Sau 8 Ngày, Bạn Sẽ Khai Phá Được</h2>
+            <p class="section-subtitle">
+                Những thay đổi tích cực và bền vững sẽ xuất hiện trong cuộc sống của bạn
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-category">
+                    <div class="benefit-icon">🧠</div>
+                    <h3 class="benefit-title">Khả Năng Nhận Thức Mới</h3>
+                    <ul class="benefit-list">
+                        <li class="benefit-item">Hiểu về sức mạnh não bộ và khả năng "tái lập trình" bản thân</li>
+                        <li class="benefit-item">Nhìn nhận nghịch cảnh từ "tại sao tôi?" sang "điều này dạy tôi gì?"</li>
+                        <li class="benefit-item">Phát triển khả năng linh hoạt cảm xúc và biến thách thức thành động lực</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-category">
+                    <div class="benefit-icon">💪</div>
+                    <h3 class="benefit-title">Sức Mạnh Nội Tại</h3>
+                    <ul class="benefit-list">
+                        <li class="benefit-item">Khả năng "tái tạo năng lượng" từ những trải nghiệm khó khăn</li>
+                        <li class="benefit-item">Nền tảng tự thương và kiên cường vững chắc</li>
+                        <li class="benefit-item">Hệ thống "phục hồi thông minh" - mạnh mẽ hơn sau mỗi thử thách</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-category">
+                    <div class="benefit-icon">🌟</div>
+                    <h3 class="benefit-title">Sự Biến Đổi Thực Sự</h3>
+                    <ul class="benefit-list">
+                        <li class="benefit-item">Từ "sống sót" sang "phát triển mạnh mẽ" trong mọi hoàn cảnh</li>
+                        <li class="benefit-item">Tìm thấy ý nghĩa và mục đích từ những trải nghiệm khó khăn</li>
+                        <li class="benefit-item">Phát triển trực giác nội tâm để đưa ra quyết định đúng đắn</li>
+                        <li class="benefit-item">Xây dựng tầm nhìn tương lai dựa trên giá trị cốt lõi</li>
+                        <li class="benefit-item">Trở thành nguồn cảm hứng cho người khác trong hành trình của họ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Don't/Do Teach Section -->
+    <section class="section dont-teach-section fade-in-section">
+        <div class="container">
+            <h2 class="section-title">RESTORE Không Dạy Gì & Dạy Gì</h2>
+            <p class="section-subtitle">
+                Phân biệt rõ ràng phương pháp của chúng tôi với các cách tiếp cận "tích cực hóa" thông thường
+            </p>
+            
+            <div class="dont-teach-content">
+                <div class="dont-teach-left">
+                    <h3 class="dont-teach-title">Chúng Tôi KHÔNG Dạy:</h3>
+                    <ul class="dont-teach-list">
+                        <li class="dont-teach-item">Phủ nhận hay tránh né khó khăn</li>
+                        <li class="dont-teach-item">Trở thành người "mạnh mẽ giả tạo"</li>
+                        <li class="dont-teach-item">Chấp nhận thụ động mọi điều</li>
+                        <li class="dont-teach-item">Hy sinh bản thân vì người khác</li>
+                        <li class="dont-teach-item">"Tích cực hóa" cưỡng bức</li>
+                    </ul>
+                </div>
+                
+                <div class="dont-teach-right">
+                    <h3 class="do-teach-title">Thay Vào Đó, Chúng Tôi Giúp Bạn:</h3>
+                    <ul class="do-teach-list">
+                        <li class="do-teach-item">Biến thử thách thành thầy giáo dạy về sức mạnh nội tại</li>
+                        <li class="do-teach-item">Phát triển trí tuệ cảm xúc để điều hướng cuộc đời</li>
+                        <li class="do-teach-item">Xây dựng nền tảng kiên cường từ giá trị cốt lõi của bạn</li>
+                        <li class="do-teach-item">Tìm thấy ý nghĩa sâu sắc trong hành trình sống</li>
+                        <li class="do-teach-item">Chuyển hóa thật sự, không "tích cực giả tạo"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Những Câu Hỏi Thường Gặp</h2>
+            <p class="section-subtitle">
+                Giải đáp những thắc mắc phổ biến về khóa học RESTORE
+            </p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Tôi đang trải qua giai đoạn khó khăn, có phù hợp để học ngay bây giờ?
+                    </button>
+                    <div class="faq-answer">
+                        Đây chính là thời điểm tuyệt vời nhất! Khóa học được thiết kế đặc biệt cho những ai đang trong "cơn bão" của cuộc sống. Framework RESTORE sẽ giúp bạn biến thử thách hiện tại thành bệ phóng cho sự phát triển.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Tôi đã thử nhiều cách "tích cực" khác nhưng cảm thấy giả tạo?
+                    </button>
+                    <div class="faq-answer">
+                        RESTORE không dạy "tích cực giả tạo" mà dạy "chuyển hóa thật sự". Chúng mình không phủ nhận khó khăn mà giúp bạn tìm thấy sức mạnh và ý nghĩa từ chính những trải nghiệm đó.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Làm sao biết mình có "sức mạnh tiềm ẩn" như khóa học nói?
+                    </button>
+                    <div class="faq-answer">
+                        Thực tế bạn đã sống đến hôm nay chính là bằng chứng! Mỗi thử thách bạn đã vượt qua đều chứng minh sức bền của bạn. Khóa học sẽ giúp bạn nhận ra và khai phá những khả năng này một cách có ý thức.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Khóa học có phù hợp với người bận rộn không?
+                    </button>
+                    <div class="faq-answer">
+                        Hoàn toàn! RESTORE được thiết kế đặc biệt cho người lao động bận rộn. Mỗi ngày chỉ cần 15-20 phút, với nội dung tinh gọn và thực hành đơn giản dễ áp dụng ngay.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Quote Section -->
+    <section class="section philosophy-section fade-in-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <p class="quote-text">
+                    Sức bền tâm lý không phải là khả năng "chịu đựng" mà là nghệ thuật chuyển hóa - biến mọi thử thách thành cơ hội phát triển
+                </p>
+                <p class="quote-author">Triết lý cốt lõi RESTORE</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section final-cta" id="register">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Sẵn Sàng Bắt Đầu Hành Trình RESTORE?</h2>
+                <p class="cta-description">
+                    Đây không chỉ là khóa học - đây là hành trình khám phá sức mạnh tiềm ẩn trong bạn. 
+                    Bắt đầu ngay hôm nay và thấy sự thay đổi tích cực sau 8 ngày.
+                </p>
+                <a href="https://forms.gle/1GMGau3ayLfcHS5f7" target="_blank" class="cta-button-large">
+                    <i class="fas fa-heart"></i> Đăng Ký Ngay - Khóa Học RESTORE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all FAQs
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    
+                    // Open clicked FAQ if it wasn't active
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+
+            // Scroll animation observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in sections
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add stagger animation to framework cards
+            const frameworkCards = document.querySelectorAll('.framework-card');
+            frameworkCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in-up');
+            });
+
+            // Add custom CSS for stagger animation
+            const style = document.createElement('style');
+            style.textContent = `
+                .fade-in-up {
+                    opacity: 0;
+                    transform: translateY(30px);
+                    animation: fadeInUp 0.6s ease-out forwards;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-bg-animation');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Add hover effect to benefit items
+        document.querySelectorAll('.benefit-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
